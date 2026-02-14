@@ -15,7 +15,7 @@ local config = {
 	finish = "*/",
 	fill = "*",
 	length = 80,
-	margin = 2,
+	margin = 5,
 	types = {
 		["%.c$|%.h$|%.cc$|%.hh$|%.cpp$|%.hpp$|%.php"] = { "/*", "*/", "*" },
 		["%.htm$|%.html$|%.xml$"] = { "<!--", "-->", "*" },
@@ -67,7 +67,7 @@ local function line(n)
 	elseif n == 2 or n == 10 then
 		return textline("", "")
 	elseif n == 3 or n == 5 or n == 7 then
-		return textline("", ascii(n) .. ((n == 9) and (vim.g.url42 or os.getenv("URL42") or ".fr") or ""))
+		return textline("", ascii(n))
 	elseif n == 4 then
 		return textline(vim.fn.expand("%:t"), ascii(n))
 	elseif n == 6 then
