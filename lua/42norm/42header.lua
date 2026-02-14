@@ -9,7 +9,7 @@ local config = {
 		"  +#+  +:+       +#+     ",
 		"+#+#+#+#+#+   +#+        ",
 		"     #+#    #+#          ",
-		"    ###   ########.fr    ",
+		"    ###   ########",
 	},
 	start = "/*",
 	finish = "*/",
@@ -67,7 +67,7 @@ local function line(n)
 	elseif n == 2 or n == 10 then
 		return textline("", "")
 	elseif n == 3 or n == 5 or n == 7 then
-		return textline("", ascii(n))
+		return textline("", ascii(n) .. ((n == 7) and (vim.g.url42 or os.getenv("URL42") or ".fr") or ""))
 	elseif n == 4 then
 		return textline(vim.fn.expand("%:t"), ascii(n))
 	elseif n == 6 then
